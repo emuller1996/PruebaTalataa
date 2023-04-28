@@ -66,5 +66,18 @@ https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&
 <img src="https://user-images.githubusercontent.com/40220427/234968624-c5e2bdd0-6af1-4aa1-825d-7bd6a84eb8bd.jpg" width="200">
 
 
+## REACT++
+
+Como plus he desarollado una aplicacion muy pequeña con react para poder destacar mas en mi postulacion y demostrar mi habilidades.(Me enteré que estan migrando a REACT)
+
+### LINKS 
+
+- Deploy :  http://prueba-talataa-muller.s3-website-sa-east-1.amazonaws.com/
+- Repo :  https://github.com/emuller1996/prueba-talataa-react-plus
+
+### Tecnologias o Librerias Utilizadas
+    - Axios ("https://axios-http.com/docs/intro")
+    - ReactPaginate ("https://www.npmjs.com/package/react-paginate")
+    - React Datepikeer ("https://reactdatepicker.com/")
 
 

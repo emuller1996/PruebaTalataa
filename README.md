@@ -13,9 +13,9 @@ Una aplicacion muy sencilla,cuenta con su login y registro. los dentro del siste
 -  Retrofit (HTTP).
 
 
-## API used
+## API Utilizadas.
 
-se utilizo la api publica de la NASA. 
+Se utilizo la api publica de la NASA. (NEO) 
 
 https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=DEMO_KEY
 
@@ -31,6 +31,36 @@ https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&
 | `start_date=` | `string` | **DEFAUL**. "2023-04-27" |
 
 
+
+MY API: 
+
+http://15.228.232.99:3000/
+
+Es una api desarolladora por mi para un sistema de facturacion pequeño, decidi implementar un end de ese api, CATEGORIAS que se utiza para gestionar la informacion de la categorais de un producto.
+
+#### Get all Categorias
+ 
+ ```http
+  GET /categorias
+```
+
+#### Get Categoria by Id
+ 
+ ```http
+  GET /categorias/{id}
+```
+
+#### Create Categoria
+ 
+ ```http
+  POST /categorias/
+```
+
+#### Update Categoria
+ 
+ ```http
+  PUT /categorias/{id}
+```
 
 
 
@@ -65,6 +95,24 @@ https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&
 
 <img src="https://user-images.githubusercontent.com/40220427/234968624-c5e2bdd0-6af1-4aa1-825d-7bd6a84eb8bd.jpg" width="200">
 
+
+
+### Gestion Categorias++ 
+
+Como plus realize una CRU  para gestionar informacion de las categorias de la API antes mencionada.
+
+<img src="https://user-images.githubusercontent.com/40220427/235322576-9e4924e3-af51-4b51-b3e8-c6621f1528cd.jpg" width="200">
+<img src="https://user-images.githubusercontent.com/40220427/235322579-957999ee-9e40-47b5-b057-0accfd2b2910.jpg" width="200">
+<img src="https://user-images.githubusercontent.com/40220427/235322582-1f92a8f4-d4f1-4f64-8d12-d392d61ef5d0.jpg" width="200">
+
+
+<!--
+
+![Screenshot_20230429_151437_PruebaTalataa](https://user-images.githubusercontent.com/40220427/235322576-9e4924e3-af51-4b51-b3e8-c6621f1528cd.jpg)
+![Screenshot_20230429_151443_PruebaTalataa](https://user-images.githubusercontent.com/40220427/235322579-957999ee-9e40-47b5-b057-0accfd2b2910.jpg)
+![Screenshot_20230429_151448_PruebaTalataa](https://user-images.githubusercontent.com/40220427/235322582-1f92a8f4-d4f1-4f64-8d12-d392d61ef5d0.jpg)
+
+--!>
 
 ## REACT++
 

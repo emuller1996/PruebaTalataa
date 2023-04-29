@@ -3,10 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/Desktop/proyectos/PruebaTalataa/app/src/main/res/layout/activity_categoria_crear.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/Desktop/proyectos/PruebaTalataa/app/src/main/res/layout/activity_categoria_editar.xml" value="0.33" />
+        <entry key="..\:/Users/user/Desktop/proyectos/PruebaTalataa/app/src/main/res/layout/activity_crear_categoria.xml" value="0.3499005964214712" />
+        <entry key="..\:/Users/user/Desktop/proyectos/PruebaTalataa/app/src/main/res/layout/activity_crear_categorias.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/user/Desktop/proyectos/PruebaTalataa/app/src/main/res/layout/activity_detalle_asteroide.xml" value="0.5" />
         <entry key="..\:/Users/user/Desktop/proyectos/PruebaTalataa/app/src/main/res/layout/activity_lista_asteroides.xml" value="0.33" />
+        <entry key="..\:/Users/user/Desktop/proyectos/PruebaTalataa/app/src/main/res/layout/activity_lista_categorias.xml" value="0.33" />
         <entry key="..\:/Users/user/Desktop/proyectos/PruebaTalataa/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/user/Desktop/proyectos/PruebaTalataa/app/src/main/res/layout/activity_registrame.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/proyectos/PruebaTalataa/app/src/main/res/layout/categoria_item.xml" value="0.33" />
         <entry key="..\:/Users/user/Desktop/proyectos/PruebaTalataa/app/src/main/res/layout/item_asteriode.xml" value="0.36666666666666664" />
       </map>
     </option>

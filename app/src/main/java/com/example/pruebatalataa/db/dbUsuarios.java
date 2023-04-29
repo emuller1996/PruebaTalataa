@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -84,4 +85,28 @@ public class dbUsuarios extends DBHelper{
             return false;
         }
     }
+
+    public Usuario getUsuarioById(int id){
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        Usuario u = null;
+
+        try {
+            Cursor cursorUsuario;
+            cursorUsuario = db.rawQuery("SELECT * FROM " + DB_TABLE_USER + " WHERE id = " + id + " ;", null);
+            if (cursorUsuario.moveToFirst()) {
+                u = new Usuario();
+                u.setId(cursorUsuario.getInt(0));
+                u.setEmail(cursorUsuario.getString(1));
+                u.setCount_logged_in(cursorUsuario.getInt(6));
+                u.setFist_name(cursorUsuario.getString(3));
+                return u;
+            }
+
+        }catch (Exception e){
+            Log.println(Log.ERROR,"ERROR : >",e.toString());
+        }
+        return u;
+    }
+
 }

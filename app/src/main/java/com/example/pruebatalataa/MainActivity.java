@@ -37,26 +37,19 @@ public class MainActivity extends AppCompatActivity {
         if (txtPassword.getText().toString().isEmpty() || txtEmail.getText().toString().isEmpty()){
             Toast.makeText(this, "ERROR: USUARIO Y CONTRASEÑA SON REQUERIDOS ", Toast.LENGTH_SHORT).show();
         }else{
-
             try {
-
-                        Usuario u = dbUsuario.validarUsuario(txtEmail.getText().toString(),txtPassword.getText().toString()) ;
+                Usuario u = dbUsuario.validarUsuario(txtEmail.getText().toString(),txtPassword.getText().toString()) ;
                     if (u !=null){
                         Intent i = new Intent(this,ListaAsteroides.class);
                         i.putExtra("usuario_id",String.valueOf(u.getId()));
                         i.putExtra("usuario_count_logged",String.valueOf(u.getCount_logged_in()));
-
                         startActivity(i);
                     }else{
                         Toast.makeText(this, "ERROR: USUARIO Y CONTRASEÑA SON INCORRECTOS ", Toast.LENGTH_SHORT).show();
                     }
-
-
             }catch (Exception e){
                 Toast.makeText(this, "ERROR: "+e.toString(), Toast.LENGTH_SHORT).show();
             }
-
-
         }
     }
 }

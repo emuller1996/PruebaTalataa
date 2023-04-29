@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -48,17 +49,22 @@ public class ListaAsteroides extends AppCompatActivity {
         usuario_id = getIntent().getStringExtra("usuario_id");
         String countLoggedIn = getIntent().getStringExtra("usuario_count_logged");
 
-        teUsuario.setText("usuario_id : "+usuario_id + " countLogged : "+countLoggedIn);
+        dbUsuarios dbUsuario = new dbUsuarios(this);
+        Usuario u = dbUsuario.getUsuarioById(Integer.parseInt(usuario_id));
+
+        teUsuario.setText("Usuario : "+u.getEmail() + " \nNombre : "+u.getFist_name());
         if(Integer.parseInt(countLoggedIn)==0){
             onGetAsteroides();
         }else{
             onListarAsteroides();
         }
-
-        Toast.makeText(ListaAsteroides.this, "usuario_id !"+usuario_id , Toast.LENGTH_SHORT).show();
-
     }
 
+
+
+    public void showListaCategoria(View v){
+        startActivity(new Intent(this,ListaCategorias.class));
+    }
 
 
     public void onGetAsteroides(){
@@ -72,6 +78,8 @@ public class ListaAsteroides extends AppCompatActivity {
 
             AsteroidesAPI as = retrofit.create(AsteroidesAPI.class);
 
+            Toast.makeText(ListaAsteroides.this, "SE ESTA HACIENDO LA PETICION AL API (NEO-FEED)" , Toast.LENGTH_SHORT).show();
+
             Call<Data> call = as.getAsteroides();
             call.enqueue(new Callback<Data>() {
                 @RequiresApi(api = Build.VERSION_CODES.N)
@@ -83,16 +91,16 @@ public class ListaAsteroides extends AppCompatActivity {
                             for (int i = 0 ; i <  entry.getValue().size() ; i++){
                                 Asteroide aTemp = entry.getValue().get(i);
                                 aTemp.setUsuario_id(Integer.parseInt(usuario_id));
-                                if ( dbAte.InsertAsteroides(aTemp)> 0)  Toast.makeText(ListaAsteroides.this, "HECHO : ", Toast.LENGTH_SHORT).show();
+                                 dbAte.InsertAsteroides(aTemp);
                             }
                         }
                         dbUsuario.incrementCountLoggedIn(Integer.parseInt(usuario_id));
+                        Toast.makeText(ListaAsteroides.this, "DATOS CARGADOS CORECTAMENTE A LA BASE DE DATOS" , Toast.LENGTH_SHORT).show();
                         onListarAsteroides();
                         //a.getNear_earth_objects().forEach((k,v) ->  teUsuario.setText(teUsuario.getText().toString()+"Key: " + k + ": Value: " + v.size()+"\n"));
-                        txtCantidadObjetos.setText("Cantidad : " +a.getElement_count()+"\n"
-                        );
+
                     }catch (Exception e){
-                        Toast.makeText(ListaAsteroides.this, "error!!"+e.toString() , Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ListaAsteroides.this, "ERROR!!"+e.toString() , Toast.LENGTH_SHORT).show();
                     }
                 }
                 @Override
@@ -108,14 +116,11 @@ public class ListaAsteroides extends AppCompatActivity {
             dbAsteroides dbAte = new dbAsteroides(this);
             ArrayList<Asteroide> asteroidesAll = dbAte.getAllAsteroidesByUser(Integer.parseInt(usuario_id));
             ListaAsteroidesAdapter adapter = new ListaAsteroidesAdapter(asteroidesAll);
+            txtCantidadObjetos.setText("Cantidad : " +asteroidesAll.size());
             listaAsteroides.setAdapter(adapter);
-            Toast.makeText(ListaAsteroides.this, "SIZE : "+asteroidesAll.size(), Toast.LENGTH_SHORT).show();
-
         }catch (Exception e){
             Toast.makeText(ListaAsteroides.this, "ERORR : "+e.toString(), Toast.LENGTH_SHORT).show();
-
         }
-
     }
 
     public void onGetUsuario(View v){
@@ -140,7 +145,6 @@ public class ListaAsteroides extends AppCompatActivity {
                     Toast.makeText(ListaAsteroides.this, "error!!"+e.toString() , Toast.LENGTH_SHORT).show();
                 }
             }
-
             @Override
             public void onFailure(Call<Usuario> call, Throwable t) {
                 Toast.makeText(ListaAsteroides.this, "ERORR :!!", Toast.LENGTH_SHORT).show();

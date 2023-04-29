@@ -30,7 +30,6 @@ public class registrame extends AppCompatActivity {
     }
 
     public void onCreateUser(View v) throws Exception {
-        Toast.makeText(this, "onCreateUser", Toast.LENGTH_SHORT).show();
         MyEncriptador e = new MyEncriptador();
 
         dbUsuarios dbUsuario = new dbUsuarios(registrame.this);

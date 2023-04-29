@@ -32,10 +32,7 @@ public class DetalleAsteroide extends AppCompatActivity {
             Asteroide a = dbAsteroides.getAstedoriedById(id);
             if(a==null){
                 Toast.makeText(this, "ERROR : ", Toast.LENGTH_SHORT).show();
-
             }else{
-                Toast.makeText(this, a.getName(), Toast.LENGTH_SHORT).show();
-
                 tvName.setText("Nombre : "+a.getName());
                 this.id.setText("Id :"+ a.getId());
                 magnitud.setText("Magnitud :"+Double.toString(a.getAbsolute_magnitude_h()));
@@ -47,10 +44,6 @@ public class DetalleAsteroide extends AppCompatActivity {
             Toast.makeText(this, "ERROR : "+e.toString(), Toast.LENGTH_SHORT).show();
 
         }
-
-
-
-
 
     }
 }

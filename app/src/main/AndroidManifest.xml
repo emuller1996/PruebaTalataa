@@ -17,14 +17,40 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".CategoriaEditar"
+            android:exported="false"
+            android:parentActivityName=".ListaCategorias">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListaCategorias"></meta-data>
+        </activity>
+
+        <activity
+            android:name=".CategoriaCrear"
+            android:exported="false"
+            android:parentActivityName=".ListaCategorias">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListaCategorias"></meta-data>
+        </activity>
+        <activity
+            android:name=".ListaCategorias"
+            android:exported="false" />
+        <activity
             android:name=".DetalleAsteroide"
             android:exported="false" />
         <activity
             android:name=".ListaAsteroides"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"></meta-data>
+        </activity>/>
         <activity
             android:name=".registrame"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"></meta-data>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

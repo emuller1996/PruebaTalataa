@@ -13,13 +13,19 @@
         android:id="@+id/txtCantidad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Cantidad : " />
 
     <TextView
         android:id="@+id/txtUsuario_id"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:onClick="showListaCategoria"
+        android:text="Categorias+" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listaAsteroides"

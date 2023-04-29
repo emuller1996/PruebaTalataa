@@ -111,8 +111,9 @@ Como plus realize una CRU  para gestionar informacion de las categorias de la AP
 ![Screenshot_20230429_151437_PruebaTalataa](https://user-images.githubusercontent.com/40220427/235322576-9e4924e3-af51-4b51-b3e8-c6621f1528cd.jpg)
 ![Screenshot_20230429_151443_PruebaTalataa](https://user-images.githubusercontent.com/40220427/235322579-957999ee-9e40-47b5-b057-0accfd2b2910.jpg)
 ![Screenshot_20230429_151448_PruebaTalataa](https://user-images.githubusercontent.com/40220427/235322582-1f92a8f4-d4f1-4f64-8d12-d392d61ef5d0.jpg)
+-->
 
---!>
+
 
 ## REACT++
 
